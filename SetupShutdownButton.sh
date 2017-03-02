@@ -28,8 +28,6 @@ sudo easy_install -b /home/pi -U distribute
 sudo pip install rpi.gpio #Install GPIO Library
 
 #Set script to start on boot
-sed -i '/exit 0/d' /etc/rc.local #remove exit 0 from /etc/rc.local
-echo "sudo python /home/pi/shutdown_button.py
+sudo sed -i '/exit 0/d' /etc/rc.local #remove exit 0 from /etc/rc.local
+sudo echo "sudo python /home/pi/shutdown_button.py
 exit 0" >> /etc/rc.local #add python script and Exit 0 into rc.local
-
-sudo reboot # Reboot pi
